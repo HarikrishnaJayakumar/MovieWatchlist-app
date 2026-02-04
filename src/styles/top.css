@@ -1,0 +1,29 @@
+.viewareacarousel {
+
+  height: 220px;
+  width: 95%;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  
+}
+
+.track {
+  height: 500px;
+  display: flex;
+  gap: 40px;
+  margin: auto ;
+  scrollbar-width: none;
+}
+
+
+.card {
+  height: 200px;
+  width: 200px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.1);
+}

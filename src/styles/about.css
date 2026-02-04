@@ -1,0 +1,37 @@
+.about-page {
+  min-height: 100vh;
+  background-color: #000;
+  color: #fff;
+  padding: 80px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.about-container {
+  max-width: 800px;
+  line-height: 1.7;
+}
+
+.about-title {
+  font-weight: 590;
+  margin-bottom: 30px;
+  font-family:"Brush Script MT" ,cursive ;
+}
+
+.about-block1 {
+  color: #ccc;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.about-block2 {
+  color: #aaa;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.about-block3 {
+  color: #777;
+  font-size: 14px;
+  margin-top: 40px;
+}
