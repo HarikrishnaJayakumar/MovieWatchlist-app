@@ -3,13 +3,13 @@ import a from 'axios'
 import Card from 'react-bootstrap/Card';
 import '../styles/top.css'
 import { Link } from 'react-router-dom';
-
+const apiKey = process.env.REACT_APP_TMDB_API_KEY;
 
 function Toprated() {
 
     const [trated, setTrated] = useState([])
     useEffect(() => {
-        a.get('https://api.themoviedb.org/3/movie/top_rated?api_key=8d56a3a8bb9b9679509488721e180d4e')
+        a.get(`https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}`)
             .then(response => {
                 setTrated(response.data.results)
             })
