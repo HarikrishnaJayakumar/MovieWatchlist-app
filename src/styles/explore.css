@@ -1,0 +1,66 @@
+.genre-scroll {
+  display: flex;
+  overflow-x: auto;
+  gap: 10px;
+  padding: 10px 20px;
+  scrollbar-width: none;
+}
+
+.genre-chip {
+  border: none;
+  padding: 8px 18px;
+  border-radius: 20px;
+  background: #2a2a2a;
+  color: white;
+  white-space: nowrap;
+  transition: 0.3s;
+}
+
+.genre-chip:hover {
+  background: #e50914;
+}
+
+.genre-chip.active {
+  background: #e50914;
+}
+
+.card {
+  height: 200px;
+  width: 200px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.1);
+}
+
+.genre-container {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.genre-container.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.genre-container.show .col-6 {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: cardFade 0.5s forwards;
+}
+
+
+.genre-container.show .col-6:nth-child(1) { animation-delay: 0.05s; }
+.genre-container.show .col-6:nth-child(2) { animation-delay: 0.1s; }
+.genre-container.show .col-6:nth-child(3) { animation-delay: 0.15s; }
+.genre-container.show .col-6:nth-child(4) { animation-delay: 0.2s; }
+.genre-container.show .col-6:nth-child(5) { animation-delay: 0.25s; }
+.genre-container.show .col-6:nth-child(6) { animation-delay: 0.3s; }
+
+@keyframes cardFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
