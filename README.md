@@ -16,6 +16,9 @@ Users can:
 
 The project is fully API-driven and uses The Movie Database (TMDB) for real-time movie data.
 
+> **Note:** The TMDB API is not accessible in India without a VPN.  
+> This application works normally in all other regions.  
+> If you are accessing from India, please enable any VPN to load the data correctly.
 ---
 
 ##  Table of Contents
