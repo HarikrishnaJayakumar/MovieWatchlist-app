@@ -1,70 +1,146 @@
-# Getting Started with Create React App
+CineVault – React Movie Discovery & Watchlist App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+CineVault is a sleek, responsive movie discovery web application built using React and powered by The Movie Database (TMDB) API.
+Users can browse movies, search titles instantly, view detailed movie pages, watch trailers, and maintain a personal watchlist stored locally on their device.
+The project is fully API-driven and uses The Movie Database (TMDB) for real-time movie data.
 
-## Available Scripts
+Features
+-Movie Browsing
+    --Explore Trending, Popular, Top Rated, and Genre-specific movies
+    --Responsive movie grids and horizontal scrolling sections
+    --API-powered search and dynamic content loading
+    --Lightweight and fast UI
 
-In the project directory, you can run:
+-Movie Details
+    --High-resolution posters and backdrops
+    --Rating, runtime, release information, and overview
+    --Integrated trailer player (YouTube modal)
+    --“Add to Watchlist” button on the movie details page
 
-### `npm start`
+-Watchlist System
+    --Add movies to a personalized Watchlist
+    --Watchlist is managed globally using React Context
+    --Remove movies easily from the Watchlist page
+    --Add/remove movies from any page
+    --Displays all saved movies as cards
+    --Persistent across page refreshes
+    --Uses React Context + LocalStorage sync
+    --Prevents duplicates ("Already in Watchlist")
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Tech Stack
+-Frontend
+    --React (Functional Components + Hooks)
+    --React Router DOM
+    --Axios
+    --React-Bootstrap
+API
+    --TMDB (The Movie Database API)
+State Management
+    --React Context API for Watchlist
+Styling
+    --CSS Modules and React-Bootstrap
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Folder Structure
+src/
+│── components/
+│   ├── MovieCard.jsx
+│   ├── Menubar.jsx
+│   ├── Watchtrailer.jsx
+│
+│── pages/
+│   ├── Home.jsx
+│   ├── Explore.jsx
+│   ├── MovieDetails.jsx
+│   ├── Watchlist.jsx
+│
+│── context/
+│   └── FavoriteContext.jsx
+│
+│── styles/
+│   ├── home.css
+│   ├── explore.css
+│   ├── moviedetail.css
+│   ├── watchlist.css
+│
+│── App.jsx
+│── index.js
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Environment Variables
 
-### `npm run build`
+This project requires a TMDB API key.
+You can generate an API key at:
+https://www.themoviedb.org
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Installation and Setup
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Clone the repository:
+git clone https://github.com/HarikrishnaJayakumar/MovieWatchlist-app.git
+cd MovieWatchlist-app
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Install dependencies:
+npm install
 
-### `npm run eject`
+Configure environment variables:
+echo "REACT_APP_TMDB_API_KEY=your_api_key" > .env
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Start the development server:
+npm start
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The application will run at:
+http://localhost:3000
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Watchlist System (Context API)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+The Watchlist is implemented using a global context (FavouriteContext).
+It exposes:
 
-## Learn More
+fav – array of movie IDs saved by the user
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+setFav() – used to modify the list
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Add to Watchlist occurs  within MovieDetails.jsx
 
-### Code Splitting
+Watchlist page retrieves real-time movie details.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+This ensures consistent, centralized state management across all pages.
+Watchlist LocalStorage Behavior
 
-### Analyzing the Bundle Size
+The app uses React Context for storing favorites (fav[]) and syncs them with LocalStorage.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+✔ Automatically stored
 
-### Making a Progressive Web App
+When you add/remove any movie, the updated list is saved.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+✔ Restored on refresh
 
-### Advanced Configuration
+On page reload, your saved movies reappear.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+✔ No duplicates
 
-### Deployment
+A movie can only be added once.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+✔ Persistent
 
-### `npm run build` fails to minify
+Data remains until you manually clear your browser storage.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+ UI Features
+-Movie Detail Backdrop Overlay
+    --Smooth gradient overlay to improve text reading.
+
+-Trailer Modal
+    --Bootstrap modal with embedded YouTube <iframe> trailer.
+
+-Explore Genre Animations
+    --Cards fade-in staggered for clean transitions.
+
+-Search Result Dropdown
+    --Custom scrollbars, hover effects, close button, poster previews.
+
+
+
+License
+
+This project is licensed under the MIT License.
+You are free to use, modify, and contribute to CineVault.
