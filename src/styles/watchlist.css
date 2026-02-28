@@ -24,14 +24,14 @@
     height: 40px;
 }
 
-/* The Grid Fix: prevents overlapping and handles wrapping */
+
 .watchlist-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 30px;
     padding: 0 40px;
     justify-content: center;
-    align-items: stretch; /* Ensures cards in the same row are equal height */
+    align-items: stretch; 
 }
 
 .movie-card {

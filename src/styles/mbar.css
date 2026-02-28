@@ -80,7 +80,6 @@ nav {
 
 
 
-/* 1. Red Scrollbar for the search results container */
 .search-results-container::-webkit-scrollbar {
     width: 8px;
 }
@@ -94,19 +93,19 @@ nav {
     background: #212529;
 }
 
-/* 2. Close Button Styling */
+
 .search-close-btn {
     background: transparent;
     border: none;
     cursor: pointer;
-    font-size: 24px;       /* Bigger size */
-    color: #808080;        /* Grey color by default */
+    font-size: 24px;       
+    color: #808080;        
     transition: color 0.2s ease, transform 0.2s ease;
     padding: 5px;
     line-height: 1;
 }
 
 .search-close-btn:hover {
-    color: #ffffff;        /* Turns white on hover */
-    transform: scale(1.1); /* Slight pop effect when hovered */
+    color: #ffffff;        
+    transform: scale(1.1);
 }

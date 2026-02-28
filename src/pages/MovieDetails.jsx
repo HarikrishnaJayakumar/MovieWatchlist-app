@@ -27,7 +27,7 @@ function MovieDetails() {
     }, [id])
     const [mtrail, setMtrail] = useState([])
     useEffect(() => {
-        axios.get(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=8d56a3a8bb9b9679509488721e180d4e`)
+        axios.get(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=${apiKey}`)
             .then(response => (
                 setMtrail(response.data.results)
             ))
