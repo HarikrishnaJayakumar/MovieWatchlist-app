@@ -1,19 +1,5 @@
-import React, { createContext, useState } from 'react'
+import { createContext } from "react";
 
+export const Favourite = createContext();
 
-export const Favourite = createContext()
-
-function FavoriteContext() {
-  const [fav,setFav] =useState([])
-
-
-   
-
-  return (<>
-  </>
-  
-
-)
-}
-
-export default FavoriteContext
+export default Favourite;
