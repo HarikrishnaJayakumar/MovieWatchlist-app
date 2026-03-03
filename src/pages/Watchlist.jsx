@@ -4,7 +4,7 @@ import axios from 'axios'
 import Card from 'react-bootstrap/Card';
 import '../styles/watchlist.css'
 
-const apiKey = process.env.REACT_APP_TMDB_API_KEY;
+// const apiKey = process.env.REACT_APP_TMDB_API_KEY;
 
 
 
@@ -24,7 +24,8 @@ function Watchlist() {
 
             Promise.all(
                 fav.map(i => (
-                    axios.get(`https://api.themoviedb.org/3/movie/${i}?api_key=${apiKey}`)
+                    axios.get(`/api/movieProxy?path=movie/${i}`)
+                    // axios.get(`https://api.themoviedb.org/3/movie/${i}?api_key=${apiKey}`)
                 )
                 )
             )

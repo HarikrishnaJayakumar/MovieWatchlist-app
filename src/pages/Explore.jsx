@@ -5,7 +5,7 @@ import Card from 'react-bootstrap/Card';
 import Toprated from '../components/Toprated'
 import { Link } from 'react-router-dom'
 import '../styles/explore.css';
-const apiKey = process.env.REACT_APP_TMDB_API_KEY;
+// const apiKey = process.env.REACT_APP_TMDB_API_KEY;
 
 function Explore() {
  
@@ -13,13 +13,15 @@ function Explore() {
     const [selectedGenre, setSelectedGenre] = useState(null)
     const [genreMovies, setGenreMovies] = useState([])
     useEffect(() => {
-        axios.get(`https://api.themoviedb.org/3/genre/movie/list?api_key=${apiKey}`)
+        axios.get(`/api/movieProxy?path=genre/movie/list`)
+        // axios.get(`https://api.themoviedb.org/3/genre/movie/list?api_key=${apiKey}`)
             .then(res => setGenres(res.data.genres))
     }, [])
 
     useEffect(() => {
         if (selectedGenre) {
-            axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&with_genres=${selectedGenre}`)
+            axios.get(`/api/movieProxy?path=discover/movie&with_genres=${selectedGenre}`)
+            // axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&with_genres=${selectedGenre}`)
                 .then(res => setGenreMovies(res.data.results))
         }
     }, [selectedGenre])
@@ -28,7 +30,8 @@ function Explore() {
 
     const [data, setData] = useState([])
     useEffect(() => {
-        axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}`)
+        axios.get(`/api/movieProxy?path=movie/popular`)
+        // axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}`)
             .then(response => {
                 setData(response.data.results);
 

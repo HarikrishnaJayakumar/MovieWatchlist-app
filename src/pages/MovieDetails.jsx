@@ -6,7 +6,7 @@ import '../styles/moviedetail.css'
 import Watchtrailer from '../components/Watchtrailer';
 import { Favourite } from '../FavoriteContext';
 
-const apiKey = process.env.REACT_APP_TMDB_API_KEY;
+// const apiKey = process.env.REACT_APP_TMDB_API_KEY;
 
 
 function MovieDetails() {
@@ -16,7 +16,8 @@ function MovieDetails() {
     const { id } = useParams();
     const [movie, setMovie] = useState([])
     useEffect(() => {
-        axios.get(`https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}`)
+        axios.get(`/api/movieProxy?path=movie/${id}`)
+        // axios.get(`https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}`)
             .then(response => (
                 setMovie(response.data)
             ))
@@ -27,7 +28,8 @@ function MovieDetails() {
     }, [id])
     const [mtrail, setMtrail] = useState([])
     useEffect(() => {
-        axios.get(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=${apiKey}`)
+        axios.get(`/api/movieProxy?path=movie/${id}/videos`)
+            // axios.get(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=${apiKey}`)
             .then(response => (
                 setMtrail(response.data.results)
             ))

@@ -4,7 +4,7 @@ import logo from '../assets/images/navlogo.png'
 import { Link, NavLink } from 'react-router-dom';
 import axios from 'axios'
 
-const apiKey = process.env.REACT_APP_TMDB_API_KEY;
+// const apiKey = process.env.REACT_APP_TMDB_API_KEY;
 
 
 function Menubar() {
@@ -26,7 +26,8 @@ function Menubar() {
             return;
         }
         const searchMovies = () => {
-        axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${search}`)
+        axios.get(`/api/movieProxy?path=search/movie&query=${search}`)    
+        // axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${search}`)
             .then(response => {
                 setResult(response.data.results)
             }).catch(error => {

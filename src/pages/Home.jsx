@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import a from 'axios'
 import { Button } from 'react-bootstrap';
-const apiKey = process.env.REACT_APP_TMDB_API_KEY;
+// const apiKey = process.env.REACT_APP_TMDB_API_KEY;
 
 function Home() {
   const [i, seti] = useState([])
@@ -10,7 +10,8 @@ function Home() {
   useEffect(() => {
     const imgid = Math.floor(Math.random() * 100) + 1;
     console.log(imgid);
-    a.get(`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&page=${imgid}`)
+    a.get(`/api/movieProxy?path=movie/popular&page=${imgid}`)
+    // a.get(`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&page=${imgid}`)
       .then(response => {
         seti(response.data.results)
       })
