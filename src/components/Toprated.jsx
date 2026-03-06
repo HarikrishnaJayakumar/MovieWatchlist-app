@@ -36,7 +36,6 @@ function Toprated() {
                         key={i.id} className="movie-link" >
                         <Card key={i.id} className="card bg-dark text-white" >
                             <Card.Img src={`https://image.tmdb.org/t/p/original/${i.poster_path}`} alt="Card image" className="movie-img" />
-                            {/* style={{ height: '200px', width: '200px',objectFit:'cover' }}  */}
                             <Card.ImgOverlay>
                                 <Card.Title>{i.title}</Card.Title>
                                 <Card.Text>{i.vote_average}</Card.Text>

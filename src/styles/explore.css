@@ -32,7 +32,7 @@
 }
 
 .movie-card img {
-  height: 320px;     /* tall poster */
+  height: 320px;     
   object-fit: cover;
 }
 

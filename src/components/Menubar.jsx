@@ -55,7 +55,6 @@ function Menubar() {
 
             <nav>
                 <div className='nav-logo' >
-                    {/* <img src={logo} alt="logo_missing" height={'75px'} width={'150px'} /> */}
                     <img src={logo} alt="logo_missing" className="logo-img" />
                 </div>
                 <div className="searchbar" style={{ position: 'relative' }} >

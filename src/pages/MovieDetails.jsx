@@ -46,8 +46,6 @@ function MovieDetails() {
 
 
     function Addtowatchlist() {
-        // setFav([...fav,id])
-        // alert('Added to Watchlist')
         const movieid = Number(id)
         if (!fav.includes(movieid)) {
             setFav([...fav, movieid]);

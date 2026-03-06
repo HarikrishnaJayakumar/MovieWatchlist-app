@@ -39,8 +39,6 @@
 }
 
 
-/* ================= MOBILE ================= */
-
 @media (max-width: 768px) {
 
   .track {
@@ -54,7 +52,6 @@
 
 }
 
-/* Small phones */
 
 @media (max-width: 480px) {
 
