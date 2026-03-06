@@ -5,6 +5,7 @@
   overflow-y: hidden;
   scroll-behavior: smooth;
   scrollbar-width: none;
+  margin-bottom: 60px;
 }
 
 .track {
@@ -15,7 +16,7 @@
 
 
 .card {
-  min-width: 240px;   
+  min-width: 240px;
   height: 300px;
   border: none;
   transition: transform 0.3s ease-in-out;

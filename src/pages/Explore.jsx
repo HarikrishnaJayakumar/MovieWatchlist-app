@@ -138,7 +138,7 @@ function Explore() {
 
             )}
             {!selectedGenre && <Toprated />}
-            <br /><br />
+            
         </div>
     )
 }

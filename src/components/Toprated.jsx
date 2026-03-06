@@ -10,7 +10,7 @@ function Toprated() {
     const [trated, setTrated] = useState([])
     useEffect(() => {
         a.get(`/api/movieProxy?path=movie/top_rated`)
-        // a.get(`https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}`)
+            // a.get(`https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}`)
             .then(response => {
                 setTrated(response.data.results)
             })
@@ -32,10 +32,10 @@ function Toprated() {
 
                 <div className='track' > {trated.map(i => (
 
-                    <Link to={`/movie/${i.id}`}  
-                     key={i.id} className="movie-link" >  
-                        <Card key={i.id}  className="card bg-dark text-white" >
-                            <Card.Img src={`https://image.tmdb.org/t/p/original/${i.poster_path}`} alt="Card image"  className="movie-img" />
+                    <Link to={`/movie/${i.id}`}
+                        key={i.id} className="movie-link" >
+                        <Card key={i.id} className="card bg-dark text-white" >
+                            <Card.Img src={`https://image.tmdb.org/t/p/original/${i.poster_path}`} alt="Card image" className="movie-img" />
                             {/* style={{ height: '200px', width: '200px',objectFit:'cover' }}  */}
                             <Card.ImgOverlay>
                                 <Card.Title>{i.title}</Card.Title>
@@ -47,7 +47,7 @@ function Toprated() {
                 </div>
 
             </div>
-
+          
         </div>
 
     )
