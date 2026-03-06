@@ -55,7 +55,8 @@ function Menubar() {
 
             <nav>
                 <div className='nav-logo' >
-                    <img src={logo} alt="logo_missing" height={'75px'} width={'150px'} />
+                    {/* <img src={logo} alt="logo_missing" height={'75px'} width={'150px'} /> */}
+                    <img src={logo} alt="logo_missing" className="logo-img" />
                 </div>
                 <div className="searchbar" style={{ position: 'relative' }} >
 
@@ -105,7 +106,7 @@ function Menubar() {
                 <div className='nav-items'>
                     {navbar.map(n => (
                         <li style={{ listStyle: 'none' }} key={n.nav_name}>
-                            <div className='navdiv' style={{ width: '100px', height: '60px', textAlign: 'center', display: 'flex', alignItems: 'center', borderradius: '10px', justifyContent: 'center', }}>
+                            <div className='navdiv' style={{ width: '100px', height: '60px', textAlign: 'center', display: 'flex', alignItems: 'center',  justifyContent: 'center', }}>
                                 <NavLink className='navlink' to={n.paths}>{n.nav_name} </NavLink>
                             </div> </li>
                     ))}

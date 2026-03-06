@@ -1,29 +1,63 @@
 .viewareacarousel {
-
-  height: 220px;
+  height: auto;
   width: 95%;
-  overflow-x: scroll;
+  overflow-x: auto;
   overflow-y: hidden;
   scroll-behavior: smooth;
   scrollbar-width: none;
-  
 }
 
 .track {
-  height: 500px;
   display: flex;
-  gap: 40px;
-  margin: auto ;
-  scrollbar-width: none;
+  gap: 25px;
+  margin: auto;
 }
 
 
 .card {
+  min-width: 200px;
   height: 200px;
-  width: 200px;
   transition: transform 0.3s ease-in-out;
+  border: none;
+}
+
+.movie-img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.movie-link {
+  text-decoration: none;
 }
 
 .card:hover {
-  transform: scale(1.1);
+  transform: scale(1.08);
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+
+  .track {
+    gap: 15px;
+  }
+
+  .card {
+    min-width: 140px;
+    height: 180px;
+  }
+
+}
+
+/* Small phones */
+
+@media (max-width: 480px) {
+
+  .card {
+    min-width: 120px;
+    height: 160px;
+  }
+
 }
