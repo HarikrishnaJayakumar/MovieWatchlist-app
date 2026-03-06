@@ -15,10 +15,10 @@
 
 
 .card {
-  min-width: 200px;
-  height: 200px;
-  transition: transform 0.3s ease-in-out;
+  min-width: 240px;   
+  height: 300px;
   border: none;
+  transition: transform 0.3s ease-in-out;
 }
 
 .movie-img {
