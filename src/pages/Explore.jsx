@@ -115,9 +115,9 @@ function Explore() {
 
                     <div className={`container mt-4 genre-container ${genreMovies.length ? "show" : ""}`}>
 
-                        <div className="row">
+                        <div className="row g-4">
                             {genreMovies.map(m => (
-                                <div className="col-6 col-md-4 col-lg-2 mb-4" key={m.id}>
+                                <div className="col-lg-2 col-md-3 col-sm-4 col-6" key={m.id}>
                                     <Link to={`/movie/${m.id}`}>
                                         <Card className="bg-dark text-white h-100 movie-card">
                                             <Card.Img
