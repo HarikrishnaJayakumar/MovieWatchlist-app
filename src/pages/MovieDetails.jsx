@@ -17,7 +17,7 @@ function MovieDetails() {
     const [movie, setMovie] = useState([])
     useEffect(() => {
         axios.get(`/api/movieProxy?path=movie/${id}`)
-        // axios.get(`https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}`)
+            // axios.get(`https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}`)
             .then(response => (
                 setMovie(response.data)
             ))
@@ -44,6 +44,8 @@ function MovieDetails() {
 
     const [modalShow, setModalShow] = useState(false);
 
+    const movieid = Number(id);
+    const isFavourite = fav.includes(movieid);
 
     function Addtowatchlist() {
         const movieid = Number(id)
@@ -94,7 +96,14 @@ function MovieDetails() {
                                     >Watch Trailer</Button>
 
 
-                                    <Button variant="outline-light" size="lg" onClick={Addtowatchlist}>Add to Watchlist</Button>
+                                    <Button
+                                        variant={isFavourite ? "success" : "outline-light"}
+                                        size="lg"
+                                        onClick={Addtowatchlist}
+                                    >
+                                        {isFavourite ? "In Watchlist" : "Add to Watchlist"}
+                                    </Button>
+                                    {/* <Button variant="outline-light" size="lg" onClick={Addtowatchlist}>Add to Watchlist</Button> */}
                                 </div>
                             </Col>
                         </Row>
